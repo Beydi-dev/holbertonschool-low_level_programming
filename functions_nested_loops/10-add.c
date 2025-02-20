@@ -2,7 +2,8 @@
 
 /**
  * add - addition between two integers
- * @a et @b: The integers
+ * @a: integer a
+ * @b: integer b
  *
  * Return: Value of the addition
  */
