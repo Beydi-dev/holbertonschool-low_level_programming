@@ -12,4 +12,5 @@ int add(int, int);
 void jack_bauer(void);
 void print_to_98(int n);
 int _isupper(int c);
+int _isdigit(int c);
 #endif
