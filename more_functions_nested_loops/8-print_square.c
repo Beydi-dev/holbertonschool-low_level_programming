@@ -15,8 +15,8 @@ void print_square(int size)
 	{
 		for (idx2 = 0; idx2 < size; idx2++)
 		{
-			printf("#");
+			_putchar('#');
 		}
-		printf("\n");
+		_putchar('\n');
 	}
 }
