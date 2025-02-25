@@ -35,6 +35,6 @@ int main(void)
 		}
 		i++;
 	}
-	puthcar('\n');
+	putchar('\n');
 	return (0);
 }
