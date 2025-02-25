@@ -4,7 +4,7 @@
  * print_diagonal - Prints \ depending on n
  * @n: the parameter
  *
- * Return: \
+ * Return: the special character
  */
 
 void print_diagonal(int n)
