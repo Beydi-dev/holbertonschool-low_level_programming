@@ -13,6 +13,8 @@ int _atoi(const char *str)
 	int sign = 1;
 	int result = 0;
 	int prev_result = 0;
+	int max_int = ((unsigned int) -1) >> 1;
+	int min_int = max_int - 1;
 
 	while (str[i] && (str[i] < '0' || str[i] > '9'))
 	{
@@ -29,7 +31,10 @@ int _atoi(const char *str)
 
 		if (result / 10 != prev_result)
 		{
-			return (sign == 1) ? 2147483647 : -2147483648;
+			if (sign == 1)
+				return (max_int);
+			else
+				return (min_int);
 		}
 		i++;
 	}
