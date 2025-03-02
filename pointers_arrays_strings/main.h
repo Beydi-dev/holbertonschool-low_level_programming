@@ -1,6 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
-void print_triangle(int size);
+char *_strncat(char *dest, char *src, int n);
 char *_strcat(char *dest, char *src);
 int _putchar(char c);
 void print_alphabet(void);
