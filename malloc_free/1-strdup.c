@@ -1,11 +1,23 @@
 #include "main.h"
-#include "2-strlen.c"
+#include <stdlib.h>
 
 /**
  * _strdup - copy of str to a newly allocated space
  * @str: the string in parameter
  * Return: char
  */
+
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
 
 char *_strdup(char *str)
 {
@@ -16,7 +28,7 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	ptr = malloc(strlen(str) + 1);
+	ptr = malloc(_strlen(str) + 1);
 
 	if (ptr == NULL)
 	{
