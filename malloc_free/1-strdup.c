@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 /**
- * _strdup - copy of str to a newly allocated space
- * @str: the string in parameter
- * Return: char
+ * _strlen - Prints the length of a string
+ * @s: The parameter
+ *
+ * Return: length of the string
  */
-
 int _strlen(char *s)
 {
 	int i = 0;
@@ -19,11 +19,16 @@ int _strlen(char *s)
 }
 
 
+/**
+ * _strdup - copy of str to a newly allocated space
+ * @str: the string in parameter
+ * Return: char
+ */
 char *_strdup(char *str)
 {
 	char *ptr;
 	int i;
-	
+
 	if (str == NULL)
 	{
 		return (NULL);
