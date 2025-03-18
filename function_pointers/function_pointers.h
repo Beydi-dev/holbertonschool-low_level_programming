@@ -2,6 +2,12 @@
 #define FUNCTION_POINTERS_H
 #include <stddef.h>
 
+/**
+ * File: function_pointers.h
+ * Desc: Header file containing prototypes for functions
+ *       that use function pointers.
+ */
+
 
 int _putchar(char c);
 void print_name(char *name, void (*f)(char *));
