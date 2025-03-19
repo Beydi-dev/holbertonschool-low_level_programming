@@ -22,7 +22,7 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL}
 	};
 
-	/*iterating through the array with integer i to find a match with our character in s */
+/*iterating through the array with integer i to find a match*/
 while (ops[i].op)
 {
 	if (*s == *ops[i].op)
