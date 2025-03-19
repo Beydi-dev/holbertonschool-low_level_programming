@@ -10,10 +10,13 @@
  */
 typedef struct op
 {
+	/*operands*/
 	char *op;
+	/*pointer to calc functions*/
 	int (*f)(int a, int b);
 } op_t;
 
+/*fonctions d'opérations*/
 int op_add(int a, int b);
 int op_sub(int a, int b);
 int op_mul(int a, int b);
