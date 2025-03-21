@@ -1,27 +1,6 @@
 #include "3-calc.h"
 #include <stdio.h>
-
-/**
- * _strcmp - Compares two strings
- * @s1: The first string
- * @s2: The second string
- *
- * Return: Value of s1[i] - s2[i]
- */
-int _strcmp(char *s1, char *s2)
-{
-	int i = 0;
-
-	while (s1[i] && s2[i])
-	{
-		if (s1[i] != s2[i])
-		{
-			return (s1[i] - s2[i]);
-		}
-		i++;
-	}
-	return (s1[i] - s2[i]);
-}
+#include <string.h>
 
 /**
  * get_op_func - Retrieves the function corresponding to an operator
@@ -41,13 +20,14 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL}
 	};
 
-	while (ops[i].op)
+	while (ops[i].f != NULL)
 	{
-		if (_strcmp(s, ops[i].op) == 0)
+		if (*s == *(ops[i].op) && s[1] == '\0')
 		{
 			return (ops[i].f);
+			i++;
 		}
-		i++;
+		printf("Error\n");
+		exit(99);
 	}
-	return (NULL);
 }
