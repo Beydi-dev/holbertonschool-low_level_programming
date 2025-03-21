@@ -2,17 +2,36 @@
 #include <stdio.h>
 
 /**
- * get_op_func - Retrieves the function corresponding to an operator.
- * @s: Operator as a string.
+ * _strcmp - Compares two strings
+ * @s1: The first string
+ * @s2: The second string
  *
- * Return: Pointer to the corresponding function, or NULL if invalid.
+ * Return: Value of s1[i] - s2[i]
  */
-
-int (*get_op_func(char *s))(int, int)
+int _strcmp(char *s1, char *s2)
 {
 	int i = 0;
 
-	/*Array of structures that provides use of loops or switch case*/
+	while (s1[i] && s2[i])
+	{
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+		i++;
+	}
+	return (s1[i] - s2[i]);
+}
+
+/**
+ * get_op_func - Retrieves the function corresponding to an operator
+ * @s: Operator as a string
+ *
+ * Return: Pointer to the corresponding function, or NULL if invalid
+ */
+int (*get_op_func(char *s))(int, int)
+{
+	int i = 0;
 	op_t ops[] = {
 		{"+", op_add},
 		{"-", op_sub},
@@ -22,14 +41,13 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL}
 	};
 
-/*iterating through the array with integer i to find a match*/
-while (ops[i].op)
-{
-	if (strcmp(s, ops[i].op) == 0)
+	while (ops[i].op)
 	{
-		return (ops[i].f);
+		if (_strcmp(s, ops[i].op) == 0)
+		{
+			return (ops[i].f);
+		}
+		i++;
 	}
-	i++;
-}
-return (NULL);
+	return (NULL);
 }
