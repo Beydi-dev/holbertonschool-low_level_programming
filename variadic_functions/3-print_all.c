@@ -57,7 +57,9 @@ void print_all(const char * const format, ...)
 	char *separator = "";
 	va_list args;
 	char *types = "cifs";
-	void (*funcs[4])(va_list) = {print_char, print_int, print_float, print_string};
+	void (*funcs[4])(va_list) = {
+		print_char, print_int, print_float, print_string
+	};
 
 	va_start(args, format);
 
