@@ -37,11 +37,11 @@ void print_string(va_list args)
 {
 	char *str;
 
-	str = va_arg(args, char *);
-	if (str)
-		printf("%s", str);
-	else
-		printf("(nil)");
+	if (!str)
+	{
+		str = "(nil)";
+	}
+	printf("%s", str);
 }
 
 /**
@@ -60,7 +60,7 @@ void print_all(const char * const format, ...)
 	void (*funcs[4])(va_list) = {
 		print_char, print_int, print_float, print_string
 	};
-
+	
 	va_start(args, format);
 
 	while (format && format[i])
