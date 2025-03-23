@@ -59,7 +59,7 @@ void print_all(const char * const format, ...)
 	void (*funcs[4])(va_list) = {
 		print_char, print_int, print_float, print_string
 	};
-	
+
 	va_start(args, format);
 
 	while (format && format[i])
