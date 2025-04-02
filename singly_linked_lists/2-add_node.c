@@ -11,26 +11,26 @@
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *newNode;
+	list_t *new_node;
 
 	/* Allocate memory for the new node */
-	newNode = malloc(sizeof(list_t));
+	new_node = malloc(sizeof(list_t));
 
-	if (newNode == NULL)
+	if (new_node == NULL)
 	{
 		return (NULL);
 	}
 	/* Duplicate the string */
-	newNode->str = strdup(str);
+	new_node->str = strdup(str);
 
-	if (newNode->str == NULL)
+	if (new_node->str == NULL)
 	{
-		free(newNode);
+		free(new_node);
 		return (NULL);
 	}
 	/* Set node data and link it to the list */
-	newNode->len = strlen(str);
-	newNode->next = *head;
-	*head = newNode;
-	return (newNode);
+	new_node->len = strlen(str);
+	new_node->next = *head;
+	*head = new_node;
+	return (new_node);
 }
