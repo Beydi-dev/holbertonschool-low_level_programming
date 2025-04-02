@@ -29,6 +29,10 @@ list_t *add_node(list_t **head, const char *str)
 		free(new_node);
 		return (NULL);
 	}
+	while (str[i] != '\0')
+	{
+		i++;
+	}
 	/* Set node data and link it to the list */
 	new_node->len = i;
 	new_node->next = *head;
