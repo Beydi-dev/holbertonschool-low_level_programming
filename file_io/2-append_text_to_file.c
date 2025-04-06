@@ -29,7 +29,9 @@ int append_text_to_file(const char *filename, char *text_content)
 	ssize_t bytes_write;
 
 	if (filename == NULL)
+	{
 		return (-1);
+	}
 
 	/* Open the file in append mode */
 	fd = open(filename, O_WRONLY | O_APPEND);
